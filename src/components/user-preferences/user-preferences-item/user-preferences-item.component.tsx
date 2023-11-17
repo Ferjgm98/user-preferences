@@ -4,10 +4,12 @@ import {
 	UserStatusEnum,
 } from "../../../types/user-preferences.types";
 import style from "./user-preferences-item.style.module.css";
+import { convertIsoDateToDate } from "./user-preferenes-item.helpers";
 
 const UserPreferencesItem: React.FC<UserPreferences> = ({
 	Name,
 	Status,
+	Date,
 	...rest
 }) => {
 	return (
@@ -18,6 +20,9 @@ const UserPreferencesItem: React.FC<UserPreferences> = ({
 					{key}: {rest[key as keyof typeof rest]}
 				</p>
 			))}
+
+			<p>Date: {convertIsoDateToDate(Date || "")}</p>
+
 			<p
 				className={`${style["user-preferences-status"]} ${
 					Status === UserStatusEnum.Inactive &&
