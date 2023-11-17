@@ -1,4 +1,7 @@
-import { UserPreferences, UserStatusEnum } from "./user-preferences.types";
+import {
+	UserPreferences,
+	UserStatusEnum,
+} from "../../types/user-preferences.types";
 
 const rockyObj: UserPreferences = {
 	Name: "Rocky",

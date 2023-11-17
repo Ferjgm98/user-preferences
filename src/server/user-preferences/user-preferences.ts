@@ -1,7 +1,10 @@
 import { Request, Response, Router } from "express";
-import { userPreferences } from "./user-prefrences.data";
+import { userPreferences } from "./user-preferences.data";
 import { attachCurrentDateToEntry, sortBy } from "./user-preferences.helpers";
-import { SortByEnum, UserPreferences } from ".";
+import {
+	SortByEnum,
+	UserPreferences,
+} from "../../types/user-preferences.types";
 
 const router = Router();
 const userPreferencesWithDate: UserPreferences[] = userPreferences.map(
@@ -15,3 +18,5 @@ router.get("/", (req: Request<{ criteria: string }>, res: Response) => {
 
 	res.json(sortedRecords);
 });
+
+export default router;

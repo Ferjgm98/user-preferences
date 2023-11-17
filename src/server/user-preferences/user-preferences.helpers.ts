@@ -1,11 +1,10 @@
+import { SortByEnum } from "../../types/user-preferences.types";
+
 /**
  * Attach the 'Date' key with the current date as value for the given object
  * @param {Object} entry given object to attach the date
  * @returns {Object}
  */
-
-import { SortByEnum } from ".";
-
 export function attachCurrentDateToEntry<T = Record<string, unknown>>(
 	entry: T
 ): T {
