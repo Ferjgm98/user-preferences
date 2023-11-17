@@ -2,7 +2,7 @@ import * as React from "react";
 import {
 	UserPreferences,
 	UserStatusEnum,
-} from "../../types/user-preferences.types";
+} from "../../../types/user-preferences.types";
 import style from "./user-preferences-item.style.module.css";
 
 const UserPreferencesItem: React.FC<UserPreferences> = ({

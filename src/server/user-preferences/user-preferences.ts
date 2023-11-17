@@ -5,6 +5,7 @@ import {
 	SortByEnum,
 	UserPreferences,
 } from "../../types/user-preferences.types";
+import { UserPreferencesSortingValues } from "../../components/user-preferences/user-preferences-sorting/user-preferences-sorting.types";
 
 const router = Router();
 const userPreferencesWithDate: UserPreferences[] = userPreferences.map(
@@ -12,9 +13,14 @@ const userPreferencesWithDate: UserPreferences[] = userPreferences.map(
 );
 
 router.get("/", (req: Request<{ criteria: string }>, res: Response) => {
-	const { criteria = "Name", direction = SortByEnum.ASC } = req.body;
+	const { sorting = "Name", direction = SortByEnum.ASC } =
+		req.query as UserPreferencesSortingValues;
 
-	const sortedRecords = sortBy(userPreferencesWithDate, criteria, direction);
+	const sortedRecords = sortBy(
+		userPreferencesWithDate,
+		sorting as keyof UserPreferences,
+		direction
+	);
 
 	res.json(sortedRecords);
 });
