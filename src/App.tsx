@@ -24,7 +24,7 @@ function App() {
 	useEffect(() => {
 		const urlParams = new URLSearchParams(sortingPreferences);
 
-		fetch("http://localhost:3002/api/user-preferences?" + urlParams)
+		fetch("api/user-preferences?" + urlParams)
 			.then((response) => response.json())
 			.then((data) => setUserPreferences(data));
 	}, [sortingPreferences]);
