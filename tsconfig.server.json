@@ -2,10 +2,11 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"module": "commonjs",
-		"moduleResolution": "Node18",
+		"moduleResolution": "node16",
 		"allowImportingTsExtensions": false,
 		"resolveJsonModule": false,
 		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
 		"esModuleInterop": true,
 		"noEmit": false,
 		"outDir": "dist",
