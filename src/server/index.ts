@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import userPreferencesRouter from "./user-preferences/user-preferences";
+import userPreferencesRouter from "./user-preferences";
 import helmet from "helmet";
 import compression from "compression";
 import path from "path";
